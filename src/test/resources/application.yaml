@@ -1,0 +1,6 @@
+spring:
+  profile:
+    on-active: test
+
+self:
+  api.key: test-api-key
