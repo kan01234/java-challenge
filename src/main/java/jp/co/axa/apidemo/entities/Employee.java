@@ -1,38 +1,27 @@
 package jp.co.axa.apidemo.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="EMPLOYEE")
+/** Entity for Employee */
+@Data
+@Builder(toBuilder = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class Employee {
 
-    @Getter
-    @Setter
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id;
+  /** Employee id */
+  @Id private Long id;
 
-    @Getter
-    @Setter
-    @Column(name="EMPLOYEE_NAME")
-    private String name;
+  /** Employee name */
+  private String name;
 
-    @Getter
-    @Setter
-    @Column(name="EMPLOYEE_SALARY")
-    private Integer salary;
+  /** Salary of the employee */
+  private Integer salary;
 
-    @Getter
-    @Setter
-    @Column(name="DEPARTMENT")
-    private String department;
-
+  /** Department of the employee */
+  private String department;
 }
