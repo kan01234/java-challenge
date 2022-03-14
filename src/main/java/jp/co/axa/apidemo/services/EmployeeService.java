@@ -1,18 +1,47 @@
 package jp.co.axa.apidemo.services;
 
-import jp.co.axa.apidemo.entities.Employee;
+import java.util.NoSuchElementException;
+import jp.co.axa.apidemo.dto.EmployeeDTO;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
-import java.util.List;
-
+/** Service for Employee */
 public interface EmployeeService {
 
-    public List<Employee> retrieveEmployees();
+  /**
+   * Retrieve list of employees
+   *
+   * @return list of employees
+   */
+  Flux<EmployeeDTO> retrieveEmployees(int offset, int limit);
 
-    public Employee getEmployee(Long employeeId);
+  /**
+   * To get specify employee by employeeId cache with employee id
+   *
+   * @param employeeId employeeId
+   * @return employee if found
+   * @throws NoSuchElementException when not found
+   */
+  Mono<EmployeeDTO> getEmployee(Long employeeId) throws NoSuchElementException;
 
-    public void saveEmployee(Employee employee);
+  /**
+   * Save employee
+   *
+   * @param employee the employee to be saved
+   */
+  Mono<EmployeeDTO> saveEmployee(EmployeeDTO employee);
 
-    public void deleteEmployee(Long employeeId);
+  /**
+   * Delete employee cache evict by employeeId
+   *
+   * @param employeeId the employee id to be deleted
+   */
+  Mono<Void> deleteEmployee(Long employeeId);
 
-    public void updateEmployee(Employee employee);
+  /**
+   * Update employee cache put by employeeId
+   *
+   * @param employee the employee to be updated
+   */
+  Mono<EmployeeDTO> updateEmployee(EmployeeDTO employee);
 }
