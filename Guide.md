@@ -37,7 +37,7 @@ Application (with the embedded H2 database) is ready to be used ! You can access
 #### What we will look for
 - Readability of your code
 - Documentation
-- Comments in your code 
+- Comments in your code
 - Appropriate usage of spring boot
 - Appropriate usage of packages
 - Is the application running as expected
