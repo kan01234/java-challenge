@@ -20,7 +20,7 @@ http://localhost:8080/webjars/swagger-ui/index.html
 
 ## Changes
 
-### Bump Spring Boot version to 2.7.9
+### Upgrade Spring Boot version to 2.7.9
 Spring boot 2.7.9 is latest version of Spring boot 2.
 According to [release note](https://spring.io/blog/2023/02/23/spring-boot-2-7-9-available-now), this version contains some bug fix, documentation improvements, and dependency upgrades.
 
